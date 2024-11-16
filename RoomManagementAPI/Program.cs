@@ -1,4 +1,7 @@
 
+using Amazon.S3;
+using Amazon.Extensions.NETCore.Setup;
+
 namespace RoomManagementAPI
 {
     public class Program
@@ -6,6 +9,8 @@ namespace RoomManagementAPI
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            builder.Services.AddAWSService<IAmazonS3>();
 
             // Add services to the container.
 
